@@ -16,7 +16,7 @@ get_coppeR <- function(x) {
   filelist <- unlist(lapply(httr::content(req), "[[", "download_url"), use.names = T)
 
   # pick a random number
-  pic.num <- sample(1:length(no.of.pics), 1)
+  pic.num <- sample(1:length(filelist), 1)
 
   # read in file - create a temporary file then delete it
   temp <- tempfile()
