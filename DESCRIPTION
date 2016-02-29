@@ -1,0 +1,12 @@
+Package: CoppeR
+Title: Gives you pictures of a miniature dachshund
+Version: 0.0.0.9000
+Authors@R: person("Copper", "The Sausage", email = "d.padfieldscfc@gmail.com", role = c("aut", "cre"))
+Description: Gives you pictures of me, a marvellous sausage dog chilling in my
+    everyday life
+Depends: 
+    R (>= 3.2.3)
+License: What license is it under?
+LazyData: true
+RoxygenNote: 5.0.1
+Imports: jpeg
