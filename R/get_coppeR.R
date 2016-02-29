@@ -24,9 +24,6 @@ get_coppeR <- function(x) {
   file <- jpeg::readJPEG(temp, native = T)
   file.remove(temp)
 
-  # read file in
-  file <- jpeg::readJPEG(no.of.pics[pic.num], native = T)
-
   # get the resolution
   res <-  dim(file)[1:2]
   res <- res*2
