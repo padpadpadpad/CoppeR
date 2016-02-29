@@ -7,11 +7,22 @@
 #' get_coppeR()
 
 get_coppeR <- function(x) {
-  # list files in /data folder
-  no.of.pics <- list.files('data', full.names = T)
+
+  # listing files from GitHub repository
+  req <- httr::GET("https://api.github.com/repos/padpadpadpad/CoppeR/contents/data")
+  httr::stop_for_status(req)
+
+  # list of files
+  filelist <- unlist(lapply(httr::content(req), "[[", "download_url"), use.names = T)
 
   # pick a random number
   pic.num <- sample(1:length(no.of.pics), 1)
+
+  # read in file - create a temporary file then delete it
+  temp <- tempfile()
+  utils::download.file(filelist[pic.num], temp, mode="wb", quiet = TRUE)
+  file <- jpeg::readJPEG(temp, native = T)
+  file.remove(temp)
 
   # read file in
   file <- jpeg::readJPEG(no.of.pics[pic.num], native = T)

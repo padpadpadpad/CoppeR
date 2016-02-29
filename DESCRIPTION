@@ -9,4 +9,5 @@ Depends:
 License: What license is it under?
 LazyData: true
 RoxygenNote: 5.0.1
-Imports: jpeg
+Imports: jpeg,
+    httr
